@@ -8,24 +8,24 @@ import { ProductService } from '../shared/product.service';
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, BrowserModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  // productService = inject(ProductService)
+  productService = inject(ProductService)
   showDetails = true;
   productInfo: any;
 
   constructor(
-    private productService: ProductService
+  //   private productService: ProductService
   ){
-
+    this.productInfo = this.productService.loadProduct()
   }
   ngOnInit(): void {
-    this.productService.loadProduct().subscribe((res: any) => {
-      console.log(res)
-      this.productInfo = res
-    })
+    // this.productService.loadProduct().subscribe((res: any) => {
+    //   console.log(res)
+    //   this.productInfo = res
+    // })
   }
 }
