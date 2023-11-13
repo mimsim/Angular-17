@@ -17,6 +17,14 @@ export class ProductDetailsComponent implements OnInit {
   showDetails = true;
   productInfo: any;
 
+  show = true;
+  
+  showAnotherIf = false;
+
+  skills = ['javascript', 'html', 'css'];
+
+  caseNo = 3;
+  
   constructor(
   //   private productService: ProductService
   ){
