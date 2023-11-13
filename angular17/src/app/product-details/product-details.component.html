@@ -1,3 +1,5 @@
-{{productInfo.title}}<br>
-{{productInfo.body}}
+@for (item of productInfo; track item.id) {
+    {{ item.title }}
+  }
+  
       

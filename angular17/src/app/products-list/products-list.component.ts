@@ -19,7 +19,7 @@ export class ProductsListComponent {
 
   }
   ngOnInit(): void {
-    this.productService.loadProduct().subscribe((res: any) => {
+    this.productService.loadProductAll().subscribe((res: any) => {
       console.log(res)
       this.productInfo = res
     })

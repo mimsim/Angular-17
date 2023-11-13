@@ -10,7 +10,10 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  loadProduct() {
-    return this.http.get(`${this.baseUrl}/1`)
+  loadProduct(id: any) {
+    return this.http.get(`${this.baseUrl}/${id}`)
+  }
+  loadProductAll() {
+    return this.http.get(`${this.baseUrl}`)
   }
 }

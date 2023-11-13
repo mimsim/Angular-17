@@ -30,7 +30,7 @@ export class ProductDetailsComponent implements OnInit {
     this.getById(this.route.snapshot.params['id'])
   }
   getById(id: any){
-    this.productService.loadProduct().subscribe((res: any) => {
+    this.productService.loadProduct(id).subscribe((res: any) => {
     console.log(res)
     this.productInfo = res
   })}

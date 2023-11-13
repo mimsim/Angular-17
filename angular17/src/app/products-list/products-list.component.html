@@ -1,2 +1,9 @@
-<p>products-list works!</p>
-<app-product-details></app-product-details>
+      
+@for (item of productInfo; track item.id) {   
+  <div class="group relative isolate w-full rounded-md bg-white p-4 text-gray-200 dark:bg-night-700">
+    <div class="h-full">
+      <div class="truncate text-sm font-semibold text-black dark:text-night-50">{{ item.title }}</div>
+      <div class="truncate text-xs text-gray-500 dark:text-night-300">{{ item.body }}</div>
+    </div>
+  </div>
+}
