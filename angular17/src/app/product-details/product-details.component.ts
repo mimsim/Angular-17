@@ -1,8 +1,9 @@
-import { Component,  OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../shared/product.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,27 +14,24 @@ import { ProductService } from '../shared/product.service';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  productService = inject(ProductService)
   showDetails = true;
   productInfo: any;
 
-  show = true;
-  
-  showAnotherIf = false;
-
-  skills = ['javascript', 'html', 'css'];
-
-  caseNo = 3;
-  
+  // id = this.route.snapshot.params['id'];.
+  // id: any;
+  id = this.route.snapshot.params['id'];
   constructor(
-  //   private productService: ProductService
-  ){
-    this.productInfo = this.productService.loadProduct()
+    private productService: ProductService,
+    private route: ActivatedRoute,
+  ) { 
+    // this.id = this.route.snapshot.params['id'];
   }
   ngOnInit(): void {
-    // this.productService.loadProduct().subscribe((res: any) => {
-    //   console.log(res)
-    //   this.productInfo = res
-    // })
+    this.getById(this.route.snapshot.params['id'])
   }
+  getById(id: any){
+    this.productService.loadProduct().subscribe((res: any) => {
+    console.log(res)
+    this.productInfo = res
+  })}
 }
