@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ProductDetailsComponent
+        BrowserAnimationsModule,
+        ProductDetailsComponent,
+        HeaderComponent,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

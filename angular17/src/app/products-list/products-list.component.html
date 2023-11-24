@@ -1,9 +1,16 @@
+<div class="container">
+
+  @for (item of productInfo; track item.id) {
+    <div class="basis-1/4">
+      <div
+      class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
       
-@for (item of productInfo; track item.id) {   
-  <div class="group relative isolate w-full rounded-md bg-white p-4 text-gray-200 dark:bg-night-700">
-    <div class="h-full">
-      <div class="truncate text-sm font-semibold text-black dark:text-night-50">{{ item.title }}</div>
-      <div class="truncate text-xs text-gray-500 dark:text-night-300">{{ item.body }}</div>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+      <p class="font-normal text-gray-700 dark:text-gray-400">{{item.body}}</p>
+      <button type="button"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      [routerLink]="[item.id]" target="_blank">View details</button>
     </div>
   </div>
 }
+</div>
