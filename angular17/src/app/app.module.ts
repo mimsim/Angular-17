@@ -4,13 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductDetailsComponent } from './product-details/product-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
+import { TableComponent } from './table/table.component';
+import { MaterialModule } from './material.module';
+import { TableColspanComponent } from './table-colspan/table-colspan.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        TableComponent,
+        TableColspanComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -19,8 +22,7 @@ import { HeaderComponent } from './header/header.component';
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        ProductDetailsComponent,
-        HeaderComponent,
+        MaterialModule       
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
